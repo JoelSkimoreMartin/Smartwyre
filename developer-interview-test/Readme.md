@@ -86,7 +86,9 @@ Principles:
 
 ### Liskov substitution principle
 
-1. The `Calculate` method in the [RebateService](Smartwyre.DeveloperTest/Services/RebateService.cs) service class uses [IRebateCalculator](Smartwyre.DeveloperTest/Services/RebateCalculators/IRebateCalculator.cs) supporting classes interchangeably
+1. The `Calculate` method in the [RebateService](Smartwyre.DeveloperTest/Services/RebateService.cs) service class
+    * [IRebateCalculator](Smartwyre.DeveloperTest/Services/RebateCalculators/IRebateCalculator.cs) supporting classes used interchangeably
+    * [RebateCalculatorFactory](Smartwyre.DeveloperTest/Services/RebateCalculators/RebateCalculatorFactory.cs) picks the calculator to use
 
 
 ### Interface segregation principle
