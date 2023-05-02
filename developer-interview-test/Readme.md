@@ -104,4 +104,17 @@ Principles:
 
 ### Dependency inversion principle
 
+1. Initialze dependency injection
+    * [Startup class](Smartwyre.DeveloperTest.Runner/Startup.cs)
+    * [IServiceCollectionExtensions class](Smartwyre.DeveloperTest/StartUp/IServiceCollectionExtensions.cs)
+1. Constructor dependency injection in practice in classes
+    * [CommandLine](Smartwyre.DeveloperTest.Runner/CommandLine.cs)
+    * [ProductDataStore](Smartwyre.DeveloperTest/Data/ProductDataStore.cs)
+    * [RebateDataStore](Smartwyre.DeveloperTest/Data/RebateDataStore.cs)
+    * [RebateService](Smartwyre.DeveloperTest/Services/RebateService.cs)
+    * [AmountPerUom](Smartwyre.DeveloperTest/Services/RebateCalculators/AmountPerUom.cs)
+    * [FixedCashAmount](Smartwyre.DeveloperTest/Services/RebateCalculators/FixedCashAmount.cs)
+    * [FixedRate](Smartwyre.DeveloperTest/Services/RebateCalculators/FixedRate.cs)
+    * [RebateCalculatorBase](Smartwyre.DeveloperTest/Services/RebateCalculators/RebateCalculatorBase.cs)
+    * [RebateCalculatorFactory](Smartwyre.DeveloperTest/Services/RebateCalculators/RebateCalculatorFactory.cs)
 
