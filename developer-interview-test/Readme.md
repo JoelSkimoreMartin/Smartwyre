@@ -52,6 +52,9 @@ Completed:
 
 ## SOLID principles in code
 
+Principles:
+* [**S**ingle responsibility principle](#single-responsibility-principle)
+* [**O**pen–closed principle](#open-closed-principle)
 
 ### Single responsibility principle
 
