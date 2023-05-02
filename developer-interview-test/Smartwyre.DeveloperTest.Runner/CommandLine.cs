@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Smartwyre.DeveloperTest.Services;
+﻿using Smartwyre.DeveloperTest.Services;
 using Smartwyre.DeveloperTest.Types;
 using System;
 using System.CommandLine;
@@ -14,6 +13,8 @@ namespace Smartwyre.DeveloperTest.Runner
                 : base("calculate", "Calculate a rebate amount")
             {
                 ArgumentNullException.ThrowIfNull(rebateService, nameof(rebateService));
+
+                RebateService = rebateService;
 
                 var options =
                     new
@@ -40,21 +41,25 @@ namespace Smartwyre.DeveloperTest.Runner
                 Add(options.volume);
 
                 this.SetHandler(
-                        (rebateId, productId, volume) =>
-                        {
-                            var request =
-                                new CalculateRebateRequest
-                                {
-                                    RebateIdentifier = rebateId,
-                                    ProductIdentifier = productId,
-                                    Volume = volume,
-                                };
-
-                            rebateService.Calculate(request);
-                        },
+                        CalculateHandler,
                         options.rebateId,
                         options.productId,
                         options.volume);
+            }
+
+            private IRebateService RebateService { get; }
+
+            private void CalculateHandler(string rebateId, string productId, decimal volume)
+            {
+                var request =
+                    new CalculateRebateRequest
+                    {
+                        RebateIdentifier = rebateId,
+                        ProductIdentifier = productId,
+                        Volume = volume,
+                    };
+
+                RebateService.Calculate(request);
             }
         }
 
