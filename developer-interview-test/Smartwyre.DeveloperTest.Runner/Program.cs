@@ -1,11 +1,19 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.CommandLine;
+using System.Threading.Tasks;
 
 namespace Smartwyre.DeveloperTest.Runner;
 
 class Program
 {
-    static void Main(string[] args)
+    private static IServiceProvider Services => _sp ??= StartUp.BuildServiceProvider();
+    private static IServiceProvider _sp;
+
+    public static async Task<int> Main(string[] args)
     {
-        throw new NotImplementedException();
+        var commandLine = Services.GetService<CommandLine>();
+
+        return await commandLine.InvokeAsync(args);
     }
 }

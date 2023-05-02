@@ -2,5 +2,13 @@
 
 public class CalculateRebateResult
 {
-    public bool Success { get; set; }
+    public static CalculateRebateResult Failed => new(false);
+    public static CalculateRebateResult Succeeded => new(true);
+
+    private CalculateRebateResult(bool success)
+    {
+        Success = success;
+    }
+
+    public bool Success { get; }
 }
