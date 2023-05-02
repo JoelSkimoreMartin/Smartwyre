@@ -29,6 +29,8 @@ public class RebateService : IRebateService
     public CalculateRebateResult Calculate(CalculateRebateRequest request)
     {
         ArgumentNullException.ThrowIfNull(request, nameof(request));
+        ArgumentNullException.ThrowIfNull(request.RebateIdentifier, $"{nameof(request)}.{nameof(request.RebateIdentifier)}");
+        ArgumentNullException.ThrowIfNull(request.ProductIdentifier, $"{nameof(request)}.{nameof(request.ProductIdentifier)}");
 
         var rebate = DataStore.Rebate.GetRebate(request.RebateIdentifier);
         if (rebate is null)

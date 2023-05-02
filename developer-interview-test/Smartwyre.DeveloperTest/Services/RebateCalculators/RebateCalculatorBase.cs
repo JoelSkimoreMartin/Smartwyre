@@ -25,7 +25,7 @@ namespace Smartwyre.DeveloperTest.Services.RebateCalculators
             return
                 request.Rebate.Incentive == IncentiveType
                 &&
-                request.Product.SupportedIncentives.HasFlag(SupportedIncentive); ;
+                request.Product.SupportedIncentives.HasFlag(SupportedIncentive);
         }
 
         public virtual bool IsValid(RebateCalculationRequest request) => IsSupported(request);
