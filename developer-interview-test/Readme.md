@@ -62,3 +62,21 @@ Completed:
         * [AmountPerUom class](Smartwyre.DeveloperTest/Services/RebateCalculators/AmountPerUom.cs)
         * [FixedCashAmount class](Smartwyre.DeveloperTest/Services/RebateCalculators/FixedCashAmount.cs)
         * [FixedRate class](Smartwyre.DeveloperTest/Services/RebateCalculators/FixedRate.cs)
+1. [CommandLine class](Smartwyre.DeveloperTest.Runner/CommandLine.cs)
+    * Only responsible processing console application command line arguments and commands
+1. [StartUp class](Smartwyre.DeveloperTest.Runner/StartUp.cs)
+    * Only responsible initializing application as it starts
+
+
+### Open–closed principle
+
+
+### Liskov substitution principle
+
+
+### Interface segregation principle
+
+
+### Dependency inversion principle
+
+
