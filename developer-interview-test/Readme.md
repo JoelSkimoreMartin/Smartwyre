@@ -8,9 +8,9 @@ Visual Studio 2022 .NET 7.0 Solution
 
 1. [Smartwyre.DeveloperTest](Smartwyre.DeveloperTest)
     * Library containing the business logic
-1. [Smartwyre.DeveloperTest.Runner](developer-interview-test/Smartwyre.DeveloperTest.Runner)
+1. [Smartwyre.DeveloperTest.Runner](Smartwyre.DeveloperTest.Runner)
     * Console application for running `Smartwyre.DeveloperTest`
-1. [Smartwyre.DeveloperTest.Tests](developer-interview-test/Smartwyre.DeveloperTest.Tests)
+1. [Smartwyre.DeveloperTest.Tests](Smartwyre.DeveloperTest.Tests)
     * Xunit test cases
 
 ## Requirements
