@@ -6,7 +6,7 @@ Visual Studio 2022 .NET 7.0 Solution
 
 ### Projects
 
-1. [Smartwyre.DeveloperTest](developer-interview-test/Smartwyre.DeveloperTest)
+1. [Smartwyre.DeveloperTest](/developer-interview-test/Smartwyre.DeveloperTest)
     * Library containing the business logic
 1. [Smartwyre.DeveloperTest.Runner](developer-interview-test/Smartwyre.DeveloperTest.Runner)
     * Console application for running `Smartwyre.DeveloperTest`
