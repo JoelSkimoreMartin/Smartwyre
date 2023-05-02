@@ -11,7 +11,7 @@ namespace Smartwyre.DeveloperTest.Services.RebateCalculators
         public virtual decimal CalculateAmount(RebateCalculationRequest request)
         {
             if (IsValid(request) == false)
-                throw new ArgumentException(nameof(request));
+                throw new ArgumentException("Invalid request", paramName: nameof(request));
 
             return 0m;
         }

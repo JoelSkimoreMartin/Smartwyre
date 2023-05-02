@@ -14,9 +14,8 @@ namespace Smartwyre.DeveloperTest.Services.RebateCalculators
             &&
             request.Rebate.Amount != 0;
 
-        public override decimal CalculateAmount(RebateCalculationRequest request)
-        {
-            return base.CalculateAmount(request) + request.Rebate.Amount;
-        }
+        public override decimal CalculateAmount(RebateCalculationRequest request) => 
+                           base.CalculateAmount(request)
+                                + request.Rebate.Amount;
     }
 }
