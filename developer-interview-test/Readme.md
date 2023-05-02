@@ -50,9 +50,15 @@ Completed:
 - [x] Illustrated SOLID principles
 
 
-Additional notes:
-   * The code is light on comments because I'm relying on this document to square the code to the requirements.
-      * Want to avoid a game of hide-and-go-seek to find what is where.
-
-
 ## SOLID principles in code
+
+
+### Single responsibility principle
+
+1. [RebateCalculatorFactory class](Smartwyre.DeveloperTest/Services/RebateCalculators/RebateCalculatorFactory.cs)
+    * Only responsible for picking the Rebate Calculated for the supplied rebate and product
+1. Rebate Calculator classes
+    * Only responsible for calculating rebates
+        * [AmountPerUom class](Smartwyre.DeveloperTest/Services/RebateCalculators/AmountPerUom.cs)
+        * [FixedCashAmount class](Smartwyre.DeveloperTest/Services/RebateCalculators/FixedCashAmount.cs)
+        * [FixedRate class](Smartwyre.DeveloperTest/Services/RebateCalculators/FixedRate.cs)
