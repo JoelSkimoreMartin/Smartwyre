@@ -53,8 +53,11 @@ Completed:
 ## SOLID principles in code
 
 Principles:
-* [**S**ingle responsibility principle](#single-responsibility-principle)
-* [**O**pen–closed principle](#open-closed-principle)
+* [`S`ingle responsibility](#single-responsibility-principle)
+* [`O`pen closed](#open-closed-principle)
+* [`L`iskov substitution](#liskov-substitution-principle)
+* [`I`nterface segregation](#interface-segregation-principle)
+* [`D`ependency inversion](#dependency-inversion-principle)
 
 ### Single responsibility principle
 
@@ -71,7 +74,7 @@ Principles:
     * Only responsible initializing application as it starts
 
 
-### Open–closed principle
+### Open closed principle
 
 
 ### Liskov substitution principle
