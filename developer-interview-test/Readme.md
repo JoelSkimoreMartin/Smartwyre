@@ -48,6 +48,7 @@ Completed:
 - [x] Met requirements
 - [x] Prove functionality validity through unit tests
 - [x] Illustrated SOLID principles
+- [x] Future adding more incentive types (see [`O`pen closed](#open-closed-principle) and [`L`iskov substitution](#liskov-substitution-principle))
 
 
 ## SOLID principles in code
@@ -92,6 +93,13 @@ Principles:
 
 
 ### Interface segregation principle
+
+1. Following interfaces are light weight
+    * [IProductDataStore](Smartwyre.DeveloperTest/Data/IProductDataStore.cs)
+    * [IRebateDataStore](Smartwyre.DeveloperTest/Data/IRebateDataStore.cs)
+    * [IRebateService](Smartwyre.DeveloperTest/Services/IRebateService.cs)
+    * [IRebateCalculator](Smartwyre.DeveloperTest/Services/RebateCalculators/IRebateCalculator.cs)
+    * [IRebateCalculatorFactory](Smartwyre.DeveloperTest/Services/RebateCalculators/IRebateCalculatorFactory.cs)
 
 
 ### Dependency inversion principle
