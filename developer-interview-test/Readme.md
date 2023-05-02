@@ -1,26 +1,58 @@
-# Smartwyre Developer Test Instructions
+# Joel's Smartwyre Developer Test / SOLID Exercise
 
-In the 'RebateService.cs' file you will find a method for calculating a rebate. At a high level the steps for calculating a rebate are:
+## Solution
 
- 1. Lookup the rebate that the request is being made against.
- 2. Lookup the product that the request is being made against.
- 2. Check that the rebate and request are valid to calculate the incentive type rebate.
- 3. Store the rebate calculation.
+Visual Studio 2022 .NET 7.0 Solution
 
-What we'd like you to do is refactor the code with the following things in mind:
+### Projects
 
- - Adherence to SOLID principles
- - Testability
- - Readability
- - In the future we will add many more incentive types. Determining the incentive type should be made as easy and intuitive as possible for developers who will edit this in the future.
+1. [Smartwyre.DeveloperTest](developer-interview-test/Smartwyre.DeveloperTest)
+    * Library containing the business logic
+1. [Smartwyre.DeveloperTest.Runner](developer-interview-test/Smartwyre.DeveloperTest.Runner)
+    * Console application for running `Smartwyre.DeveloperTest`
+1. [Smartwyre.DeveloperTest.Tests](developer-interview-test/Smartwyre.DeveloperTest.Tests)
+    * Xunit test cases
 
-We’d also like you to 
- - Add some unit tests to the Smartwyre.DeveloperTest.Tests project to show how you would test the code that you’ve produced 
- - Run the RebateService from the Smartwyre.DeveloperTest.Runner console application accepting inputs
+## Requirements
 
-The only specific 'rules' are:
+> # Smartwyre Developer Test Instructions
+> 
+> In the 'RebateService.cs' file you will find a method for calculating a rebate. At a high level the steps for calculating a rebate are:
+> 
+>  1. Lookup the rebate that the request is being made against.
+>  2. Lookup the product that the request is being made against.
+>  2. Check that the rebate and request are valid to calculate the incentive type rebate.
+>  3. Store the rebate calculation.
+> 
+> What we'd like you to do is refactor the code with the following things in mind:
+> 
+>  - Adherence to SOLID principles
+>  - Testability
+>  - Readability
+>  - In the future we will add many more incentive types. Determining the incentive type should be made as easy and intuitive as possible for developers who will edit this in the future.
+> 
+> We’d also like you to 
+>  - Add some unit tests to the Smartwyre.DeveloperTest.Tests project to show how you would test the code that you’ve produced 
+>  - Run the RebateService from the Smartwyre.DeveloperTest.Runner console application accepting inputs
+> 
+> The only specific 'rules' are:
+> 
+> - The solution should build
+> - The tests should all pass
+> 
+> You are free to use any frameworks/NuGet packages that you see fit. You should plan to spend around 1 hour completing the exercise.
 
-- The solution should build
-- The tests should all pass
 
-You are free to use any frameworks/NuGet packages that you see fit. You should plan to spend around 1 hour completing the exercise.
+Completed:
+
+- [x] Met requirements
+- [x] Prove functionality validity through unit tests
+- [x] Illustrated SOLID principles
+
+
+Additional notes:
+   * The code is light on comments because I'm relying on this document to square the code to the requirements.
+      * Want to avoid a game of hide-and-go-seek to find what is where.
+
+
+## SOLID principles in code
