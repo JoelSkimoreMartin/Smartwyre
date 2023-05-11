@@ -7,30 +7,19 @@ namespace Smartwyre.DeveloperTest.Services.RebateCalculators
 {
     public class RebateCalculatorFactory : IRebateCalculatorFactory
     {
-        public RebateCalculatorFactory(IServiceProvider serviceProvider)
+        public RebateCalculatorFactory(List<IRebateCalculator> rebateCalculators)
         {
-            ArgumentNullException.ThrowIfNull(serviceProvider, nameof(serviceProvider));
+            ArgumentNullException.ThrowIfNull(rebateCalculators, nameof(rebateCalculators));
 
-            ServiceProvider = serviceProvider;
+            RebateCalculators = rebateCalculators;
         }
 
-        private IServiceProvider ServiceProvider { get; }
-
-        private Dictionary<Type, bool> Interfaces { get; } = typeof(IRebateCalculator).InheritedInterfaces().ToDictionary(i => i, i => false);
-        private Dictionary<IncentiveType, Dictionary<SupportedIncentiveType, Type>> Mapping { get; } = new();
+        private List<IRebateCalculator> RebateCalculators { get; }
 
         public IRebateCalculator GetCalculator(Rebate rebate, Product product)
         {
             ArgumentNullException.ThrowIfNull(rebate, nameof(rebate));
             ArgumentNullException.ThrowIfNull(product, nameof(product));
-
-            if (Mapping.TryGetValue(rebate.Incentive, out var supported) == false)
-            {
-                Mapping[rebate.Incentive] = supported = new();
-            }
-            else
-                if (supported.TryGetValue(product.SupportedIncentives, out var serviceType))
-                    return ServiceProvider.GetService(serviceType) as IRebateCalculator;
 
             var request =
                 new RebateCalculationRequest
@@ -39,23 +28,7 @@ namespace Smartwyre.DeveloperTest.Services.RebateCalculators
                     Product = product,
                 };
 
-            foreach (var @interface in Interfaces.Keys)
-            {
-                if (Interfaces[@interface])
-                    continue;
-
-                var calculator = ServiceProvider.GetService(@interface) as IRebateCalculator;
-
-                if (calculator.IsSupported(request) == false)
-                    continue;
-
-                Interfaces[@interface] = true;
-                supported[product.SupportedIncentives] = @interface;
-
-                return calculator;
-            }
-
-            return null;
+            return RebateCalculators.FirstOrDefault(rc => rc.IsSupported(request));
         }
     }
 }

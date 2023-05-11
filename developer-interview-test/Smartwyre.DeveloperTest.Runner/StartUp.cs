@@ -21,7 +21,6 @@ namespace Smartwyre.DeveloperTest.Runner
             ArgumentNullException.ThrowIfNull(services, nameof(services));
 
             services
-                .AddScoped(sp => sp)
                 .AddSingleton<CommandLine>()
                 .AddSingleton<CommandLine.CalculateCommand>()
                 .AddInherited<IRebateCalculator>()

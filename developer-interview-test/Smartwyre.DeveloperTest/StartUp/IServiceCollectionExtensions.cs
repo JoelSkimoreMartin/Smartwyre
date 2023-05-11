@@ -3,6 +3,7 @@ using Smartwyre.DeveloperTest.Data;
 using Smartwyre.DeveloperTest.Services;
 using Smartwyre.DeveloperTest.Services.RebateCalculators;
 using System;
+using System.Linq;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -34,7 +35,11 @@ namespace Microsoft.Extensions.DependencyInjection
                 services.AddScoped(map.ServiceType, map.ImplementationType);
             }
 
-            return services;
+            return
+                services.AddScoped(sp =>
+                                    mappings
+                                        .Select(map => sp.GetService(map.ServiceType) as IRebateCalculator)
+                                        .ToList());
         }
     }
 }
